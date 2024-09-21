@@ -150,35 +150,30 @@ onMounted(() => checkvars())
 </script>
 
 <template>
-  <div
-    v-if="
-      ($frontmatter.layout == 'cover' && $frontmatter.brand_tl !== false) ||
-      ($frontmatter.layout == 'section' && $frontmatter.brand_tl !== false) ||
-      ($frontmatter.layout == 'intro' && $frontmatter.brand_tl !== false) ||
-      ($frontmatter.layout == 'end' && $frontmatter.brand_tl !== false) ||
-      $frontmatter.brand_tl == true ||
-      $frontmatter.brand_tl == 'auto_true'
-    "
-    class="absolute top-4 left-11 p-3 pr-5 border.b-1 font-size-2 font-mono color-gray-500 width-full text-right"
-  >
+  <div v-if="
+    ($frontmatter.layout == 'cover' && $frontmatter.brand_tl !== false) ||
+    ($frontmatter.layout == 'section' && $frontmatter.brand_tl !== false) ||
+    ($frontmatter.layout == 'intro' && $frontmatter.brand_tl !== false) ||
+    ($frontmatter.layout == 'end' && $frontmatter.brand_tl !== false) ||
+    $frontmatter.brand_tl == true ||
+    $frontmatter.brand_tl == 'auto_true'
+  " class="absolute top-4 left-11 p-3 pr-5 border.b-1 font-size-2 font-mono color-gray-500 width-full text-right">
     <NYUlogo :color="brand_tl_color" :color2="brand_tl_color2" />
   </div>
 
-  <div
-    v-if="
-      $frontmatter.brand_tr == true ||
-      ($frontmatter.brand_tr == 'auto_true' &&
-        $frontmatter.layout != 'image' &&
-        $frontmatter.layout != 'image-right' &&
-        $frontmatter.layout != 'iframe-right' &&
-        $frontmatter.layout != 'iframe' &&
-        $frontmatter.layout != 'top-title' &&
-        $frontmatter.layout != 'top-title-two-cols')
-    "
-    class="absolute top-3 right-2 p-3 pr-3 border.b-1 z-10 font-size-3 font-mono width-full text-right"
-    :class="brand_tr_color"
-  >
-    <a href="https://gureckislab.org"> <uim-cube /> gureckislab.org </a>
+  <div v-if="
+    $frontmatter.brand_tr == true ||
+    ($frontmatter.brand_tr == 'auto_true' &&
+      $frontmatter.layout != 'image' &&
+      $frontmatter.layout != 'image-right' &&
+      $frontmatter.layout != 'iframe-right' &&
+      $frontmatter.layout != 'iframe' &&
+      $frontmatter.layout != 'top-title' &&
+      $frontmatter.layout != 'top-title-two-cols')
+  " class="absolute top-3 right-2 p-3 pr-3 border.b-1 z-10 font-size-3 font-mono width-full text-right"
+    :class="brand_tr_color">
+    <a href="https://gureckislab.org"> gureckislab </a> /
+    <a href="https://lake-lab.github.io/"> lakelab </a>
   </div>
 </template>
 
@@ -189,6 +184,7 @@ img {
 }
 
 html.dark {
+
   /* dark mode css here */
   img {
     filter: invert(1);
