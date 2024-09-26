@@ -1054,22 +1054,9 @@ title: generalizations-errors-2
     </div>
   </div>
   
-  <div class="w-1/2">
-    <p class="text-2xl text-center">Participant errors</p>
-    <div class="grid grid-cols-2 gap-6 w-full h-full">
-      <div>
-        <img src="/images/73ccf9c2_errors/73ccf9c2_2fbc883faadde34a010a44a0598689b1.png" style="width: 170px; height: auto;"/>
-      </div>
-      <div>
-        <img src="/images/73ccf9c2_errors/73ccf9c2_415030804cc01e18c17761f7938b2bac.png" style="width: 170px; height: auto;"/>
-      </div>
-      <div>
-        <img src="/images/73ccf9c2_errors/73ccf9c2_04f9e42bf603dbdd1a957da89ca401d6.png" style="width: 170px; height: auto;"/>
-      </div>
-      <div>
-        <img src="/images/73ccf9c2_errors/73ccf9c2_04f9e42bf603dbdd1a957da89ca401d6.png" style="width: 170px; height: auto;"/>
-      </div>
-    </div>
+  <div class="w-1/2 flex flex-col items-center justify-center" style="margin-top: 100px">
+    <p class="text-2xl text-center mb-4">Common participant error</p>
+    <img src="/images/73ccf9c2_errors/73ccf9c2_8565dde497d7042d810bd0f234a952e7.png" style="width: auto; height: 120px;"/>
   </div>
 </div>
 
@@ -1183,78 +1170,6 @@ The richness of the descriptions that people use shows the breadth of abstractio
 layout: two-cols-title
 columns: is-4
 align: l-cm-cm
-title: new work
----
-
-:: title ::
-
-# Previous work
-
-:: left ::
-
-<v-click>
-
-<img src="/images/f76d97a5-train.png" alt="Alt text" style="width: 200px; height: auto;">
-</v-click>
-
-:: right ::
-
-<v-switch>
-<template #1>
-  <img src="/images/f76d97a5-test-hidden.jpg" alt="Alt text" style="width: 200px; height: auto;">
-</template>
-
-<template #2>
-<img src="/images/f76d97a5-test.png" alt="Alt text" style="width: 200px; height: auto;">
-<Box shape="s-d-2-50" size="-" color="neutral-light" style="margin-top:50px">Fill in the gray squares with the color of the other squares and fill the rest of the squares with black.</Box>
-</template>
-</v-switch>
-
-<!--
-[click] Here are some training examples and corresponding [click]  test input for an easy task. I'll give you a few seconds to figure out the rule. Everyone got it?
-
-[click]  Nearly everyone gets this task pretty easily. Here is the correct test output and a randomly selected (correct) natural language solution description.
-
-- pick easier example that is obvious
-- talk about different aspects of each task in the demos
-- **little data, program synthesis but human generated problems, DSL open (no predefined set of primitives and proves to be very difficult to tackle in this way -- tell you more later), natural language shows that people bring a lot of knowledge to bear when doing these tasks** 
-- present examples ones by one
-- if you think you know the rule, clap!
-- if you're curious about these, go to website
--->
-
----
-layout: two-cols-title
-columns: is-4
-align: l-cm-cm
----
-
-:: title ::
-
-# Demo: `task 2`
-
-:: left ::
-
-<img src="/images/e9ac8c9e-train.png" alt="Alt text" style="width: 200px; height: auto;">
-
-:: right ::
-
-<img src="/images/e9ac8c9e-test.png" alt="Alt text" style="width: 200px; height: auto;">
-
-
-<Box shape="s-d-2-50" size="-" color="neutral-light" style="margin-top:50px">
-
-Colored outside blocks at the corner should color the inside gray boxes the same, while sharing the same number of blocks.
-</Box>
-
-<!--
-Here's another demo task and a randomly sampled solution description from our dataset.
--->
-
----
-layout: two-cols-title
-columns: is-4
-align: l-cm-cm
 ---
 
 :: title ::
@@ -1355,6 +1270,31 @@ color: amber-light
 ---
 
 # Thanks for listening!
+
+---
+layout: two-cols-title
+columns: is-5
+align: l-cm-cm
+---
+
+:: title ::
+
+# `Alternative` programs
+
+:: left ::
+
+<img src="/images/9aec4887-training.png" style="width: 140px" />
+<img src="/images/9aec4887-test.png" style="width: 140px" />
+
+:: right ::
+
+<img src="/images/9aec4887-submission.png" style="width: 250px" />
+
+A perfectly consistent output!
+
+<!--
+-- cut this out
+-->
 
 ---
 layout: side-title
@@ -1839,26 +1779,72 @@ Here to the left you can see examples of states visited by participants from sta
 
 ---
 layout: two-cols-title
-columns: is-5
+columns: is-4
+align: l-cm-cm
+title: new work
+---
+
+:: title ::
+
+# Previous work
+
+:: left ::
+
+<v-click>
+
+<img src="/images/f76d97a5-train.png" alt="Alt text" style="width: 200px; height: auto;">
+</v-click>
+
+:: right ::
+
+<v-switch>
+<template #1>
+  <img src="/images/f76d97a5-test-hidden.jpg" alt="Alt text" style="width: 200px; height: auto;">
+</template>
+
+<template #2>
+<img src="/images/f76d97a5-test.png" alt="Alt text" style="width: 200px; height: auto;">
+<Box shape="s-d-2-50" size="-" color="neutral-light" style="margin-top:50px">Fill in the gray squares with the color of the other squares and fill the rest of the squares with black.</Box>
+</template>
+</v-switch>
+
+<!--
+[click] Here are some training examples and corresponding [click]  test input for an easy task. I'll give you a few seconds to figure out the rule. Everyone got it?
+
+[click]  Nearly everyone gets this task pretty easily. Here is the correct test output and a randomly selected (correct) natural language solution description.
+
+- pick easier example that is obvious
+- talk about different aspects of each task in the demos
+- **little data, program synthesis but human generated problems, DSL open (no predefined set of primitives and proves to be very difficult to tackle in this way -- tell you more later), natural language shows that people bring a lot of knowledge to bear when doing these tasks** 
+- present examples ones by one
+- if you think you know the rule, clap!
+- if you're curious about these, go to website
+-->
+
+---
+layout: two-cols-title
+columns: is-4
 align: l-cm-cm
 ---
 
 :: title ::
 
-# What kinds of `errors` do people make? 
-## 4. Alternative programs
+# Demo: `task 2`
 
 :: left ::
 
-<img src="/images/9aec4887-training.png" style="width: 140px" />
-<img src="/images/9aec4887-test.png" style="width: 140px" />
+<img src="/images/e9ac8c9e-train.png" alt="Alt text" style="width: 200px; height: auto;">
 
 :: right ::
 
-<img src="/images/9aec4887-submission.png" style="width: 250px" />
+<img src="/images/e9ac8c9e-test.png" alt="Alt text" style="width: 200px; height: auto;">
 
-A perfectly consistent output!
+
+<Box shape="s-d-2-50" size="-" color="neutral-light" style="margin-top:50px">
+
+Colored outside blocks at the corner should color the inside gray boxes the same, while sharing the same number of blocks.
+</Box>
 
 <!--
--- cut this out
+Here's another demo task and a randomly sampled solution description from our dataset.
 -->
