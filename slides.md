@@ -1002,28 +1002,36 @@ title: generalization-errors-1
 Test
  -->
 
-<div v-drag="[500,170,233,40]">
+<div v-drag="[500,80,233,40]">
 <span class="text-2xl">Test example</span>
 </div>
 
-<div v-drag="[500,210,150,190]">
+<div v-drag="[500,120,150,190]">
 <img src="/images/73ccf9c2_test_input_1.png" style="width: auto; height: 150px;"/>
  <p class="text-ms text-gray-500" style="margin-top: 2px;">Test input</p>
 </div>
 
-<div v-drag="[650,260,40,70]">
+<div v-drag="[655,180,40,70]">
 <span class="text-5xl">→</span>
 </div>
 
-<div v-drag="[710,210,150,190]">
+<div v-drag="[710,120,150,190]">
 <img src="/images/73ccf9c2_test_output_1.png" style="width: auto; height: 150px;"/>
  <p class="text-ms text-gray-500" style="margin-top: 2px;">Test output</p>
 </div>
 
-<!-- Inferred program is correct but only for *some* training examples
-- Attention error
-- Failure to incorporate one of the odd training examples -->
+  <v-click>
+  <div v-drag="[491,314,370,190]" class="text-center">
+    <p class="text-2xl text-center mb-4">Common participant error (10/15)</p>
+    <img src="/images/73ccf9c2_errors/73ccf9c2_8565dde497d7042d810bd0f234a952e7.png" style="width: auto; height: 120px;"/>
+  </div>
+  </v-click>
 
+<!--
+Inferred program is correct but only for *some* training examples
+- Attention error
+- Failure to incorporate one of the odd training examples
+-->
 
 ---
 layout: full
@@ -1054,19 +1062,29 @@ title: generalizations-errors-2
     </div>
   </div>
   
-  <div class="w-1/2 flex flex-col items-center justify-center" style="margin-top: 100px">
-    <p class="text-2xl text-center mb-4">Common participant error</p>
+  <v-click>
+  <div class="w-1/2 flex flex-col items-center justify-center" style="margin-top: 25px">
+    <p class="text-2xl text-center mb-4">Common participant error (10/15)</p>
     <img src="/images/73ccf9c2_errors/73ccf9c2_8565dde497d7042d810bd0f234a952e7.png" style="width: auto; height: 120px;"/>
   </div>
+  </v-click>
+
+  <v-clicks depth="2">
+  <div v-drag="[457,300,504,169]">
+  
+  Inferred program applies to *some* training examples but not all
+  - Failure to account for one or more training example(s)
+  - Stopping too early
+  - Attention error
+  </div>
+  </v-clicks>
 </div>
 
-<!-- A common generalization error: "the lowest shape / object in the grid". -->
+<!-- -->
 
-<!-- 
-
- -->
-
- 
+<!--
+A common generalization error: "the lowest shape / object in the grid".
+-->
 
 ---
 layout: two-cols-title
