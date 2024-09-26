@@ -529,9 +529,14 @@ title: fuzzy-errors-1
 </div>
 
 <div v-drag="[60,120,105,130]">
-<img src="/images/4364c1c4_train_input_1.png" style="width: auto; height: 95px;"/>
+<img src="/images/a8610ef7_train_input_1.png" style="width: auto; height: 95px;"/>
  <p class="text-ms text-gray-500" style="margin-top: 2px;">Train input 1</p>
 </div>
+
+<div v-drag="[180,160,40,70]">
+<span class="text-5xl">→</span>
+</div>
+
 
 <div v-drag="[250,120,120,130]">
 <img src="/images/a8610ef7_train_output_1.png" style="width: auto; height: 95px;"/>
@@ -567,32 +572,81 @@ title: fuzzy-errors-1
  <p class="text-ms text-gray-500" style="margin-top: 2px;">Train input 2</p>
 </div>
 
-:: right ::
 
-Inferred program is almost correct but a few steps are ==fuzzy==. 
+<!-- 
+Test
+ -->
 
-What do I mean by fuzzy?
-- Surface level statistics
-- Approximate operations
+<div v-drag="[500,170,233,40]">
+<span class="text-2xl">Test example</span>
+</div>
+
+<div v-drag="[500,210,150,190]">
+<img src="/images/a8610ef7_test_input_1.png" style="width: auto; height: 150px;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Test input</p>
+</div>
+
+<div v-drag="[650,260,40,70]">
+<span class="text-5xl">→</span>
+</div>
+
+
+<div v-drag="[710,210,150,190]">
+<img src="/images/a8610ef7_test_output_1.png" style="width: auto; height: 150px;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Test output</p>
+</div>
 
 <!--
-So here is a motivating problem we'll work through.
 
-- show grid of errors first then explain program inference
-- more quantitative analyses in the paper
 -->
 
 ---
 layout: two-cols-title
 columns: is-5
-align: l-cm-lt
+align: l-cm-cm
 title: fuzzy-errors-1
 ---
 
 ::title::
 
-# What kinds of `errors` do people make? 
-## 1. Fuzzy programs
+# `Fuzzy` programs
+
+:: left ::
+
+<img src="/images/a8610ef7_test_output_1.png" style="width: 250px"/>
+<p class="text-ms text-gray-500" style="margin-top: 4px;">Test output</p>
+
+:: right ::
+
+<p class="text-2xl">Participant errors</p>
+
+<div class="grid grid-cols-2 gap-6 w-full h-full">
+  <div>
+    <img src="/images/a8610ef7_errors/a8610ef7_04971c8c0e6a87970102e41c41eeff7c.png" style="width: 175px; height: auto;"/>
+  </div>
+  <div>
+    <img src="/images/a8610ef7_errors/a8610ef7_136eafd87f3573bcafae39272f91244e.png" style="width: 175px; height: auto;"/>
+  </div>
+  <div>
+    <img src="/images/a8610ef7_errors/a8610ef7_416214ee6b29041ad993b67dfe90485a.png" style="width: 175px; height: auto;"/>
+  </div>
+  <div>
+    <img src="/images/a8610ef7_errors/a8610ef7_f53f0be7b647edbfab12dfb5b87eb0b9.png" style="width: 175px; height: auto;"/>
+  </div>
+</div>
+
+
+
+---
+layout: two-cols-title
+columns: is-5
+align: l-cm-lt
+title: fuzzy-errors-2
+---
+
+::title::
+
+## `Fuzzy` programs
 
 :: left ::
 
@@ -601,7 +655,7 @@ title: fuzzy-errors-1
 
 :: right ::
 
-Here's an example of a the kind of (pseudo) program one might infer:
+Here's an example of the kind of (pseudo) program one might infer:
 
 ```js {1}{maxHeight:'275px'}
 function solve(input_grid){
@@ -637,12 +691,12 @@ function solve(input_grid){
 layout: two-cols-title
 columns: is-5
 align: l-cm-lt
+title: fuzzy-errors-3
 ---
 
 ::title::
 
-# What kinds of `errors` do people make? 
-## 1. Fuzzy programs
+## `Fuzzy` programs
 
 :: left ::
 
@@ -651,7 +705,7 @@ align: l-cm-lt
 
 :: right ::
 
-Here's an example of a the kind of (pseudo) program one might infer:
+Here's an example of the kind of (pseudo) program one might infer:
 
 ```js {1-3}{maxHeight:'275px'}
 function solve(input_grid){
@@ -688,12 +742,12 @@ function solve(input_grid){
 layout: two-cols-title
 columns: is-5
 align: l-cm-lt
+title: fuzzy-errors-4
 ---
 
 ::title::
 
-# What kinds of `errors` do people make? 
-## 1. Fuzzy programs
+## `Fuzzy` programs
 
 :: left ::
 
@@ -702,7 +756,7 @@ align: l-cm-lt
 
 :: right ::
 
-Here's an example of a the kind of (pseudo) program one might infer:
+Here's an example of the kind of (pseudo) program one might infer:
 
 ```js {4-5}{maxHeight:'275px'}
 function solve(input_grid){
@@ -738,12 +792,12 @@ function solve(input_grid){
 layout: two-cols-title
 columns: is-5
 align: l-cm-lt
+title: fuzzy-errors-5
 ---
 
 ::title::
 
-# What kinds of `errors` do people make? 
-## 1. Fuzzy programs
+## `Fuzzy` programs
 
 :: left ::
 
@@ -752,7 +806,7 @@ align: l-cm-lt
 
 :: right ::
 
-Here's an example of a the kind of (pseudo) program one might infer:
+Here's an example of the kind of (pseudo) program one might infer:
 
 ```js {6-13}{maxHeight:'275px'}
 function solve(input_grid){
@@ -789,12 +843,12 @@ function solve(input_grid){
 layout: two-cols-title
 columns: is-5
 align: l-cm-lt
+title: fuzzy-errors-6
 ---
 
 ::title::
 
-# What kinds of `errors` do people make? 
-## 1. Fuzzy programs
+## `Fuzzy` programs
 
 :: left ::
 
@@ -803,9 +857,9 @@ align: l-cm-lt
 
 :: right ::
 
-Here's an example of a the kind of (pseudo) program one might infer:
+Here's an example of the kind of (pseudo) program one might infer:
 
-```js {14-22}{maxHeight:'275px'}
+```js {14-23}{maxHeight:'275px'}
 function solve(input_grid){
     // all outputs have the same 6x6 size
     let intermediate = resize(input_grid, 6, 6);
@@ -832,33 +886,200 @@ function solve(input_grid){
 ```
 
 <!-- 
+Inferred program is almost correct but a few steps are ==fuzzy==. 
 
+What do I mean by fuzzy?
+- Surface level statistics
+- Approximate operations
 -->
 
 ---
 layout: two-cols-title
 columns: is-5
-align: l-cm-cm
+align: l-lm-lm
+title: fuzzy-errors-7
 ---
 
 ::title::
 
-# What kinds of `errors` do people make? 
-## 1. Fuzzy programs
+## `Fuzzy` programs
 
 :: left ::
 
-<img src="/images/a8610ef7-intermediate-4.png" style="width: 250px"/>
-<p style="font-size: 0.8em"> Final state </p>
+Inferred program is almost correct but a few steps are ==fuzzy==. 
+- Surface level statistics
+- Approximate operations
 
 :: right ::
 
-<img src="/images/a8610ef7-test.png" style="width: 300px" />
+```js {all}{maxHeight:'500px'}
+function solve(input_grid){
+    // all outputs have the same 6x6 size
+    let intermediate = resize(input_grid, 6, 6);
+    // the outputs seem to be a copy of the input
+    intermediate = copy_from_input();
+    // but instead of blue, the cells are gray
+    for (let x=0; x < w; x++){
+      for (let y=0, y < h; y++){
+          if (intermediate[x][y] == 'gray') {
+            intermediate = edit_cell(intermediate, x, y, 'blue');
+          }
+      }
+    }
+    // now what about the red? not sure about the exact pattern here...
+    // sample some random cells to color red
+    const numRedCells = Math.floor(Math.random() * 16 + 8) + 1; // 8 to 16 red cells
+    for (let i = 0; i < numRedCells; i++) {
+        let redX = Math.floor(Math.random() * 6);
+        let redY = Math.floor(Math.random() * 6);
+        intermediate = color(intermediate, redX, redY, 'red');
+    }
+  return intermediate
+}
+```
+
 
 <!-- 
 
 -->
 
+---
+layout: full
+title: generalization-errors-1
+---
+
+# `Generalization` errors
+
+<div class="items-center" v-drag="[60,80,233,40]">
+<span class="text-2xl">Training examples</span>
+</div>
+
+<div v-drag="[180,160,40,70]">
+<span class="text-5xl">→</span>
+</div>
+
+<div v-drag="[60,120,105,130]">
+<img src="/images/73ccf9c2_train_input_1.png" style="width: auto; height: 95px;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train input 1</p>
+</div>
+
+<div v-drag="[250,120,120,130]">
+<img src="/images/73ccf9c2_train_output_1.png" style="width: auto; height: 95px;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train output 1</p>
+</div>
+
+
+<div v-drag="[60,260,105,130]">
+<img src="/images/73ccf9c2_train_input_2.png" style="width: auto; height: 95px;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train input 2</p>
+</div>
+
+<div v-drag="[180,290,40,70]">
+<span class="text-5xl">→</span>
+</div>
+
+<div v-drag="[250,260,120,130]">
+<img src="/images/73ccf9c2_train_output_2.png" style="width: auto; height: 95px;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train output 2</p>
+</div>
+
+<div v-drag="[60,400,105,130]">
+<img src="/images/73ccf9c2_train_input_3.png" style="width: auto; height: 95px;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train input 2</p>
+</div>
+
+<div v-drag="[180,430,40,70]">
+<span class="text-5xl">→</span>
+</div>
+
+<div v-drag="[250,400,105,130]">
+<img src="/images/73ccf9c2_train_output_3.png" style="width: auto; height: 95px;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train input 2</p>
+</div>
+
+
+<!-- 
+Test
+ -->
+
+<div v-drag="[500,170,233,40]">
+<span class="text-2xl">Test example</span>
+</div>
+
+<div v-drag="[500,210,150,190]">
+<img src="/images/73ccf9c2_test_input_1.png" style="width: auto; height: 150px;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Test input</p>
+</div>
+
+<div v-drag="[650,260,40,70]">
+<span class="text-5xl">→</span>
+</div>
+
+<div v-drag="[710,210,150,190]">
+<img src="/images/73ccf9c2_test_output_1.png" style="width: auto; height: 150px;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Test output</p>
+</div>
+
+<!-- Inferred program is correct but only for *some* training examples
+- Attention error
+- Failure to incorporate one of the odd training examples -->
+
+
+---
+layout: full
+title: generalizations-errors-2
+---
+
+# `Generalization` errors
+
+<div class="flex">
+  <div class="w-1/2">
+    <div class="flex items-center">
+      <div>
+        <div v-drag="[60,170,233,40]">
+          <span class="text-2xl">Test example</span>
+        </div>
+        <div v-drag="[60,210,150,190]">
+          <img src="/images/73ccf9c2_test_input_1.png" style="width: auto; height: 120px;"/>
+          <p class="text-ms text-gray-500" style="margin-top: 2px;">Test input</p>
+        </div>
+      </div>
+      <div v-drag="[190,250,40,70]" class="mx-4">
+        <span class="text-5xl">→</span>
+      </div>
+      <div v-drag="[280,210,150,190]">
+        <img src="/images/73ccf9c2_test_output_1.png" style="width: auto; height: 120px;"/>
+        <p class="text-ms text-gray-500" style="margin-top: 2px;">Test output</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="w-1/2">
+    <p class="text-2xl text-center">Participant errors</p>
+    <div class="grid grid-cols-2 gap-6 w-full h-full">
+      <div>
+        <img src="/images/73ccf9c2_errors/73ccf9c2_2fbc883faadde34a010a44a0598689b1.png" style="width: 170px; height: auto;"/>
+      </div>
+      <div>
+        <img src="/images/73ccf9c2_errors/73ccf9c2_415030804cc01e18c17761f7938b2bac.png" style="width: 170px; height: auto;"/>
+      </div>
+      <div>
+        <img src="/images/73ccf9c2_errors/73ccf9c2_04f9e42bf603dbdd1a957da89ca401d6.png" style="width: 170px; height: auto;"/>
+      </div>
+      <div>
+        <img src="/images/73ccf9c2_errors/73ccf9c2_04f9e42bf603dbdd1a957da89ca401d6.png" style="width: 170px; height: auto;"/>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- A common generalization error: "the lowest shape / object in the grid". -->
+
+<!-- 
+
+ -->
+
+ 
 
 ---
 layout: two-cols-title
@@ -917,60 +1138,6 @@ Some text
 
 add input
 -->
-
----
-layout: two-cols-title
-columns: is-5
-align: l-cm-lm
----
-
-:: title ::
-
-# What kinds of `errors` do people make? 
-## 3. Generalization errors
-
-:: left ::
-
-<img src="/images/73ccf9c2-training.png" style="width: 135px" />
-<img src="/images/73ccf9c2-test.png" style="width: 135px" />
-
-:: right ::
-
-Inferred program is correct but only for *some* training examples
-- Attention error
-- Failure to incorporate one of the odd training examples
-
-<!-- 
-
- -->
-
----
-layout: two-cols-title
-columns: is-5
-align: l-cm-cm
----
-
-:: title ::
-
-# What kinds of `errors` do people make? 
-## 3. Generalization errors
-
-:: left ::
-
-<img src="/images/73ccf9c2-training.png" style="width: 135px" />
-<img src="/images/73ccf9c2-test.png" style="width: 135px" />
-
-:: right ::
-
-<img src="/images/73ccf9c2-submission.png" style="width: 300px" />
-
-A common generalization error: "the lowest shape / object in the grid".
-
-<!-- 
-
- -->
-
- 
 
 ---
 layout: two-cols-title
