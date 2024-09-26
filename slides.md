@@ -256,7 +256,7 @@ title: motivation-demo-2
  <p class="text-ms text-gray-500" style="margin-top: 2px;">Test input</p>
 </div>
 
-<div v-drag="[660,260,40,70]">
+<div v-drag="[650,260,40,70]">
 <span class="text-5xl">→</span>
 </div>
 
@@ -489,6 +489,7 @@ We find that the evaluation set is significantly harder than the training set bu
 
 ---
 layout: statement
+title: errors
 ---
 
 ## What kinds of `errors` do people make?
@@ -516,20 +517,55 @@ Going back to this idea that I mentioned earlier that we can represent the conce
 -->
 
 ---
-layout: two-cols-title
-columns: is-5
-align: l-ct-lm
+layout: full
+title: fuzzy-errors-1
 ---
 
-::title::
 
-# What kinds of `errors` do people make? 
-## 1. Fuzzy programs
+# `Fuzzy` programs
 
-:: left ::
+<div class="items-center" v-drag="[60,80,233,40]">
+<span class="text-2xl">Training examples</span>
+</div>
 
-<img src="/images/a8610ef7-train.png" style="width: 175px"/>
-<img src="/images/a8610ef7-test.png"style="width: 175px" />
+<div v-drag="[60,120,105,130]">
+<img src="/images/4364c1c4_train_input_1.png" style="width: auto; height: 95px;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train input 1</p>
+</div>
+
+<div v-drag="[250,120,120,130]">
+<img src="/images/a8610ef7_train_output_1.png" style="width: auto; height: 95px;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train output 1</p>
+</div>
+
+
+<div v-drag="[60,260,105,130]">
+<img src="/images/a8610ef7_train_input_2.png" style="width: auto; height: 95px;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train input 2</p>
+</div>
+
+<div v-drag="[180,290,40,70]">
+<span class="text-5xl">→</span>
+</div>
+
+<div v-drag="[250,260,120,130]">
+<img src="/images/a8610ef7_train_output_2.png" style="width: auto; height: 95px;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train output 2</p>
+</div>
+
+<div v-drag="[60,400,105,130]">
+<img src="/images/a8610ef7_train_input_3.png" style="width: auto; height: 95px;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train input 2</p>
+</div>
+
+<div v-drag="[180,430,40,70]">
+<span class="text-5xl">→</span>
+</div>
+
+<div v-drag="[250,400,105,130]">
+<img src="/images/a8610ef7_train_output_3.png" style="width: auto; height: 95px;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train input 2</p>
+</div>
 
 :: right ::
 
@@ -550,6 +586,7 @@ So here is a motivating problem we'll work through.
 layout: two-cols-title
 columns: is-5
 align: l-cm-lt
+title: fuzzy-errors-1
 ---
 
 ::title::
