@@ -1028,9 +1028,9 @@ Test
   </v-click>
 
 <!--
-Inferred program is correct but only for *some* training examples
-- Attention error
-- Failure to incorporate one of the odd training examples
+A common generalization error for this problem: 
+
+"the lowest shape / object in the grid".
 -->
 
 ---
@@ -1040,108 +1040,247 @@ title: generalizations-errors-2
 
 # `Generalization` errors
 
-<div class="flex">
-  <div class="w-1/2">
-    <div class="flex items-center">
-      <div>
-        <div v-drag="[60,170,233,40]">
-          <span class="text-2xl">Test example</span>
-        </div>
-        <div v-drag="[60,210,150,190]">
-          <img src="/images/73ccf9c2_test_input_1.png" style="width: auto; height: 120px;"/>
-          <p class="text-ms text-gray-500" style="margin-top: 2px;">Test input</p>
-        </div>
-      </div>
-      <div v-drag="[190,250,40,70]" class="mx-4">
-        <span class="text-5xl">→</span>
-      </div>
-      <div v-drag="[280,210,150,190]">
-        <img src="/images/73ccf9c2_test_output_1.png" style="width: auto; height: 120px;"/>
-        <p class="text-ms text-gray-500" style="margin-top: 2px;">Test output</p>
-      </div>
-    </div>
-  </div>
-  
-  <v-click>
-  <div class="w-1/2 flex flex-col items-center justify-center" style="margin-top: 25px">
-    <p class="text-2xl text-center mb-4">Common participant error (10/15)</p>
-    <img src="/images/73ccf9c2_errors/73ccf9c2_8565dde497d7042d810bd0f234a952e7.png" style="width: auto; height: 120px;"/>
-  </div>
-  </v-click>
+<div class="items-center" v-drag="[60,80,233,40]">
+<span class="text-2xl">Training examples</span>
+</div>
 
-  <v-clicks depth="2">
-  <div v-drag="[457,300,504,169]">
+<div v-drag="[180,160,40,70]">
+<span class="text-5xl">→</span>
+</div>
+
+<div v-drag="[60,120,105,130]">
+<img src="/images/73ccf9c2_train_input_1.png" style="width: auto; height: 95px;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train input 1</p>
+</div>
+
+<div v-drag="[250,120,120,130]">
+<img src="/images/73ccf9c2_train_output_1.png" style="width: auto; height: 95px;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train output 1</p>
+</div>
+
+
+<div v-drag="[60,260,105,130]">
+<img src="/images/73ccf9c2_train_input_2.png" style="width: auto; height: 95px;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train input 2</p>
+</div>
+
+<div v-drag="[180,290,40,70]">
+<span class="text-5xl">→</span>
+</div>
+
+<div v-drag="[250,260,120,130]">
+<img src="/images/73ccf9c2_train_output_2.png" style="width: auto; height: 95px;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train output 2</p>
+</div>
+
+<div v-drag="[60,400,105,130]">
+<img src="/images/73ccf9c2_train_input_3.png" style="width: auto; height: 95px;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train input 2</p>
+</div>
+
+<div v-drag="[180,430,40,70]">
+<span class="text-5xl">→</span>
+</div>
+
+<div v-drag="[250,400,105,130]">
+<img src="/images/73ccf9c2_train_output_3.png" style="width: auto; height: 95px;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train input 2</p>
+</div>
+
+<v-clicks depth="2">
+  <div v-drag="[461,212,488,169]">
   
   Inferred program applies to *some* training examples but not all
   - Failure to account for one or more training example(s)
   - Stopping too early
   - Attention error
   </div>
-  </v-clicks>
-</div>
+</v-clicks>
 
 <!-- -->
 
 <!--
-A common generalization error: "the lowest shape / object in the grid".
+[click] So generalization errors are inferred programs that are correct for some training examples but not all.
+
+[click] This could be due to an inability to account for one or more training example(s) so resort to next best rule
+
+[click] Stopping the reasoning process too early
+
+[click] Not recognizing an element of the problem
 -->
 
 ---
-layout: two-cols-title
-columns: is-5
-align: l-cm-lm
+layout: full
+title: incomplete-errors-1
 ---
 
-:: title ::
+# `Incomplete` programs
 
-# What kinds of `errors` do people make? 
-## 2. Incomplete programs
+<div class="items-center" v-drag="[60,80,233,40]">
+<span class="text-2xl">Training examples</span>
+</div>
 
-:: left ::
+<div v-drag="[180,160,40,70]">
+<span class="text-5xl">→</span>
+</div>
 
-<img src="/images/5833af48-train.png" style="width: 175px"/>
-<img src="/images/5833af48-test.png"style="width: 175px" />
+<div v-drag="[60,120,105,130]">
+<img src="/images/5833af48_train_input_1.png" style="width: auto; height: 95px;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train input 1</p>
+</div>
 
-:: right ::
+<div v-drag="[250,120,190,130]">
+<img src="/images/5833af48_train_output_1.png" style="width: auto; height: auto;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train output 1</p>
+</div>
 
-Inferred program is correct up to the kth step but missing N-k steps
 
-The participant inferred an incomplete set of operations
-- Attention 
-- Stuck
-- Interface misunderstanding
+<div v-drag="[60,260,105,130]">
+<img src="/images/5833af48_train_input_2.png" style="width: auto; height: 95px;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train input 2</p>
+</div>
+
+<div v-drag="[180,290,40,70]">
+<span class="text-5xl">→</span>
+</div>
+
+<div v-drag="[250,260,160,130]">
+<img src="/images/5833af48_train_output_2.png" style="width: auto; height: auto;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train output 2</p>
+</div>
+
+<div v-drag="[60,400,115,130]">
+<img src="/images/5833af48_train_input_3.png" style="width: auto; height: 95px;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train input 3</p>
+</div>
+
+<div v-drag="[180,430,40,70]">
+<span class="text-5xl">→</span>
+</div>
+
+<div v-drag="[250,400,140,130]">
+<img src="/images/5833af48_train_output_3.png" style="width: auto; height: auto;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train output 3</p>
+</div>
 
 
 <!-- 
-
+Test
  -->
 
----
-layout: two-cols-title
-columns: is-5
-align: l-cm-cm
----
+<div v-drag="[500,80,233,40]">
+<span class="text-2xl">Test example</span>
+</div>
 
-:: title ::
+<div v-drag="[500,120,180,190]">
+<img src="/images/5833af48_test_input_1.png" style="width: auto; height: 150px;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Test input</p>
+</div>
 
-# What kinds of `errors` do people make? 
-## 2. Incomplete programs
+<div v-drag="[680,180,40,70]">
+<span class="text-5xl">→</span>
+</div>
 
-:: left ::
+<div v-drag="[730,150,190,190]">
+<img src="/images/5833af48_test_output_1.png" style="width: auto; height: auto;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Test output</p>
+</div>
 
-<img src="/images/5833af48-train.png" style="width: 175px"/>
-<img src="/images/5833af48-test.png" style="width: 175px" />
-
-:: right ::
-
-
-<img src="/images/5833af48-submission.png" style="width: 300px" />
-<p>Incorrect but only one step away from correct output!</p>
+<v-click>
+<div v-drag="[491,314,370,190]" class="text-center">
+  <p class="text-2xl text-center mb-4">Participant error (2/7)</p>
+  <img src="/images/5833af48_errors/5833af48_3c42caea2042c30af4f47bbbe9650269.png" style="width: auto; height: 120px;"/>
+</div>
+</v-click>
 
 <!--
-Some text
+Sometimes the programs that people infer are incomplete.
 
-add input
+Here the transformation is indicated by a visual instruction in the top right rectangle.
+
+Notice that there is a light blue shape surrounded by red in the top left square.
+
+The light blue squares in the rectangle on the right indicate where to paste the blue shape. 
+
+The bottom rectangle indicates where to paste the shape.
+
+Finally, the modified bottom rectangle should be submitted as the output grid.
+
+[click] A few participants on this problem actually omitted that last step.
+-->
+
+
+---
+layout: full
+title: incomplete-errors-2
+---
+
+# `Incomplete` programs
+
+<div class="items-center" v-drag="[60,80,233,40]">
+<span class="text-2xl">Training examples</span>
+</div>
+
+<div v-drag="[180,160,40,70]">
+<span class="text-5xl">→</span>
+</div>
+
+<div v-drag="[60,120,105,130]">
+<img src="/images/5833af48_train_input_1.png" style="width: auto; height: 95px;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train input 1</p>
+</div>
+
+<div v-drag="[250,120,190,130]">
+<img src="/images/5833af48_train_output_1.png" style="width: auto; height: auto;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train output 1</p>
+</div>
+
+
+<div v-drag="[60,260,105,130]">
+<img src="/images/5833af48_train_input_2.png" style="width: auto; height: 95px;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train input 2</p>
+</div>
+
+<div v-drag="[180,290,40,70]">
+<span class="text-5xl">→</span>
+</div>
+
+<div v-drag="[250,260,160,130]">
+<img src="/images/5833af48_train_output_2.png" style="width: auto; height: auto;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train output 2</p>
+</div>
+
+<div v-drag="[60,400,115,130]">
+<img src="/images/5833af48_train_input_3.png" style="width: auto; height: 95px;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train input 3</p>
+</div>
+
+<div v-drag="[180,430,40,70]">
+<span class="text-5xl">→</span>
+</div>
+
+<div v-drag="[250,400,140,130]">
+<img src="/images/5833af48_train_output_3.png" style="width: auto; height: auto;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train output 3</p>
+</div>
+
+
+<v-clicks depth="2">
+  <div v-drag="[489,213,488,241]">
+  
+Inferred program is correct up to the $k^{th}$ step but missing $N-k$ steps
+- Stuck
+- Interface misunderstanding 
+</div>
+</v-clicks>
+
+
+<!--
+[click] The inferred program is correct but is somehow cut off. Some hypothesized reasons why that might be:
+
+[click] The participant may not know what the next steps are
+
+[click] Or they might not know how to use the interface to execute the next steps
 -->
 
 ---
