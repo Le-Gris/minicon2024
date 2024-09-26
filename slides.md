@@ -354,7 +354,9 @@ To spur new research to endow machines with the kind of flexibility we just disc
 
 [click] The benchmark consists of a set of visual program-synthesis tasks divided into a set of 400 training tasks and 400 evaluation tasks
 
-[click] Unique to this benchmark is that SOTA performance has not increased by much since its release with current best models at around 46%
+[click] Unique to this benchmark is that SOTA performance has not increased by much since its release with current best models at around 46%.
+
+This is in stark contrast to many benchmarks in the machine learning world.
 
 [click] This led to the development of an ARC prize this year, with a million dollars in funds for rewarding progress towards human-level performance.
 
@@ -471,7 +473,7 @@ title: performance
 <!--
 So, how good are people at this weird, artificial task? Surprisingly good!
 
-On the left here, the x-axis shows indexes tasks ordered from hardest to easiest and the y-axis shows participant success rate.
+On the left plot here, the x-axis represents tasks ordered from hardest to easiest and the y-axis shows participant success rate.
 
 Dotted lines correspond to mean accuracy for people on each set and for the best algorithmic approach so far on the evaluation set.
 
@@ -482,9 +484,6 @@ Dotted lines correspond to mean accuracy for people on each set and for the best
 [click] Importantly, 98% of tasks in both sets are solved by at least one person.
 
 We find that the evaluation set is significantly harder than the training set but it's still unclear why that's the case.
-
-- maybe include actual tasks to point to difficulty / easiness
-- add ticks
 -->
 
 ---
@@ -513,7 +512,7 @@ go back to thinking about people's inferences as program-like
 <!--
 So people are pretty good at these tasks. But in what ways do they fail and can we learn anything from the kinds of errors that they make?
 
-Going back to this idea that I mentioned earlier that we can represent the concepts that people learn using programs, I'll propose four different kinds of program inference errors that people make.
+Going back to this idea that I mentioned earlier that we can represent the concepts that people learn using programs, I'll propose there different kinds of program inference errors that people seem to be making here.
 -->
 
 ---
@@ -885,7 +884,7 @@ function solve(input_grid){
 }
 ```
 
-<!-- 
+<!--
 Inferred program is almost correct but a few steps are ==fuzzy==. 
 
 What do I mean by fuzzy?
