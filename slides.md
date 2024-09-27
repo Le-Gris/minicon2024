@@ -1454,7 +1454,7 @@ color: amber-light
 title: thanks
 ---
 
-# Thanks for listening!
+# Thanks for listening! <material-symbols-android/>
 
 ---
 layout: two-cols-title
