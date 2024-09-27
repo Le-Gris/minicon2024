@@ -1363,11 +1363,11 @@ title: natural-language
 </div>
 
 <v-clicks depth="2">
-<div v-drag="[459,85,489,114]">
+<div v-drag="[450,65,489,114]">
 <Box shape="s-d-2-50" size="-" color="neutral-light" style="margin-top:50px">Keep the top and bottom lines the same and the line just below them one over. Repeat a <span class="text-pink-500">wavy</span> pattern for the rest of the shape.</Box>
 </div>
 
-<div v-drag="[447,246,496,173]">
+<div class=“ns-c-tight” v-drag="[450,210,496,216]">
 
 People use all sorts of abstractions and concepts
 - Geometry / shape: *wavy*, *vertical*, *symmetrical*, *diagonal*, etc
@@ -1375,12 +1375,16 @@ People use all sorts of abstractions and concepts
 - Others: *layer*, *outline*, *move*, *slide*, *flower*, *tetris*, etc 
 </div>
 
-<div v-drag="[543,441,268,59]">
+<div v-drag="[560,460,268,59]">
 
 ```mermaid
 graph LR
 A[Concept] <---> B[Program]
 ```
+</div>
+
+<div v-drag="[670,440,58,70]">
+<material-symbols-question-mark class="text-4xl"/>
 </div>
 
 </v-clicks>
@@ -1402,7 +1406,7 @@ Above here is an incorrect description by one of our participants.
 
 [click]  And many other concepts
 
-[click]  What's remarkable here is that people can intuitively come up with these abstractions even though formalizing them into actual subroutines or programs can be difficult.
+[click]  What's remarkable here is that people can intuitively come up with these abstractions even though [click] formalizing them into actual subroutines or programs can be difficult.
 -->
 
 ---
