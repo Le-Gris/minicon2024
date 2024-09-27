@@ -408,7 +408,7 @@ columns: is-8
 </v-clicks>
 
 <!--
-[click] We got online workers to do 5 random tasks using the browser interface shown here.
+[click] We got over 1700 online workers to do 5 random tasks using the browser interface shown here.
 
 The tasks were sampled from either the training set or the evaluation set
 
