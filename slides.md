@@ -1386,7 +1386,7 @@ A[Concept] <---> B[Program]
 </v-clicks>
 
 <!--
-Now moving on to natural language quickly.
+Now moving on to natural language briefly.
 
 We won't have time to go into the details of this pretty difficult problem but I'll use it to illustrate a very neat property about ARC problems and human cognition. 
 
@@ -1417,7 +1417,7 @@ title: future-directions
 # `Future` directions
 
 <div style="display: flex; justify-content: center; align-items: flex-end; height: 100%;">
-  <div style="width: 100px; height: 100px; margin-top: 75px;">
+  <div style="width: 100px; height: 75px; margin-top: 75px;">
     <QRCode value="arc-visualizations.github.io" :size="100" render-as="svg"/>
   <p class="text-xs text-center">Check out our project webpage</p>
   </div>
@@ -1425,28 +1425,43 @@ title: future-directions
 
 :: content ::
 
+<div v-click="3">
 <div class="flex justify-center">
-  <img src="/images/f76d97a5_state_space_graph.png" style="width: auto; height: 175px;">
+  <img src="/images/f76d97a5_state_space_graph.png" style="width: auto; height: 135px;">
 </div>
 <p class="text-lg text-center text-gray-500">State space graph</p>
+</div>
+
+<v-clicks>
 
 - What makes some ARC problems more ==difficult==?
 - How can we use ==natural language== descriptions to make predictions about difficulty and the kinds of programs people infer?
+ </v-clicks>
+
+ <div v-click="4">
+
 - The majority of approaches to ARC have unsuccessfully tried to design a DSL to solve ARC tasks. What are ==alternatives== to this?
-- Inventor of the benchmark is going to be here in October, more details on the <img src="https://mbm.cds.nyu.edu/assets/images/brain.svg" style="width: 15px; height: auto; display: inline-block; vertical-align: middle;"> Minds, Brains & Machines website 
+</div>
+
+ <div v-click="5">
+
+- Inventor of the benchmark is going to be here in October, more details on the Minds, Brains & Machines <img src="https://mbm.cds.nyu.edu/assets/images/brain.svg" style="width: 15px; height: auto; display: inline-block; vertical-align: middle;"> website 
+</div>
 
 <!--
 So we're currently exploring many different avenues to understand how people reason in this novel domain.
 
-In particular, it's not clear what makes some ARC problems harder for people than others. To start getting a clearer idea of this, we've been looking into Bayesian Item Response Theory methods to infer parameters that disambiguate latent participant ability and problem difficulty.
+[click] In particular, it's not clear what makes some ARC problems harder for people than others. To start getting a clearer idea of this, we've been looking into Bayesian Item Response Theory methods to infer parameters that disambiguate latent participant ability and problem difficulty.
 
-We're also looking into the variety of words and concepts that people use to describe their solutions in ARC tasks and how this might relate to things like difficulty.
+[click] We're also looking into the variety of words and concepts that people use to describe their solutions in ARC tasks and how this might relate to things like difficulty.
 
-Up here, I'm showing the state space graph of a problem. Each node represents a state and edges transitions between them. We're also interested in looking into how people construct the grids and what that tells out about how they decompose their goals into subgoals.
+[click] Up here, I'm showing the state space graph of a problem in the training set. Each node represents a state and edges transitions between them. You can see this trajectory that many participants seem to have visited to get to the correct state (green node).
 
-A more difficult question is about what kind of computational model can both capture human behavior and accuracy in ARC tasks. The vast majority of approaches so far have used what is called a DSL, a special kind of programming language designed for a particular task. Those approaches are brittle and don't work very well. 
+We're also interested in looking into how people construct the grids and what that tells out about how they decompose their goals into subgoals.
 
-Finally, Francois Chollet is going to be visiting in October so check out the NYU Minds, Brains and Machine website if you're interested in attending.
+[click] A more difficult question is about the exact details of the kind of computational model that could both capture human behavior and accuracy in ARC tasks. The vast majority of approaches so far have used what is called a DSL, a special kind of programming language designed for a particular task. Those approaches are brittle and don't work very well. 
+
+[click] Finally, Francois Chollet is going to be visiting in October so check out the NYU Minds, Brains and Machine website if you're interested in attending.
 -->
 
 ---
@@ -2021,7 +2036,7 @@ title: human-machine
 
 OK. But what about the machines? <material-symbols-android />
 
-Most approaches use a DSL-like approach. Interesting that the intuition operations are very program-like but this fails.
+Most approaches use a DSL-like approach. Interesting that the intuitive operations are very program-like but this fails.
 
 People seem to be good at this because they can use arbitrary abstractions to guide the program search.
 
