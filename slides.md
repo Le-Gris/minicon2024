@@ -506,26 +506,8 @@ title: errors
 
 ## What kinds of `errors` do people make?
 
-
-<!-- 
-
-people are good but how good? 
-
-and what does that tell us about underlying mental representations / operations?
-
-go back to thinking about people's inferences as program-like
-
-- *fuzzy programs*: full program but some steps are fuzzy
-- *nearly correct but incomplete programs*: incomplete program, missing N-k steps (i.e., missing extrusion, coloring, resizing, etc)
-- *partially valid program*: correct program but only for **some** training examples
-- *alternative program*: accounts for all training examples but is incorrect
-
- -->
-
 <!--
 So people are pretty good at these tasks. But in what ways do they fail and can we learn anything from the kinds of errors that they make?
-
-Going back to this idea that I mentioned earlier of thinking about concept learning as program induction, I'll propose thee different kinds of program inference errors that people seem to be making in ARC tasks.
 -->
 
 ---
@@ -613,8 +595,6 @@ The first kind of error I want to talk about, I call it fuzzy program inference.
 So the problem here is actually pretty hard and none of the people we tested figured it out.
 
 If you don't see it, the rule involves coloring red the input cells that are symmetric along a horizontal midline and coloring all the others gray.
-
-Maybe add line here?
 -->
 
 ---
@@ -882,7 +862,7 @@ title: fuzzy-errors-6
 
 Here's an example of the kind of (pseudo) program one might infer:
 
-```js {14-23}{maxHeight:'275px'}
+```js {14-23}{maxHeight:'325px'}
 function solve(input_grid){
     // all outputs have the same 6x6 size
     let intermediate = resize(input_grid, 6, 6);
