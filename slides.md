@@ -5,6 +5,7 @@ layout: cover
 theme: neversink
 lineNumbers: true
 neversink_slug: H-ARC
+mdc: true
 ---
 
 ## H-ARC: A Robust Estimate of Human Performance on the Abstraction and Reasoning Corpus Benchmark
@@ -52,9 +53,9 @@ This kind of flexible concept learning has been studied in various settings and 
 
 For instance, some of Brenden's previous work captures human concepts of handwritten characters as simple programs that best explain observed examples under a Bayesian criterion.
 
-[click] Yanli Zhou has done some further work extending this idea of modelling concepts using Bayesian program induction to compositional concepts in the form of "alien figures".
+[click] Yanli Zhou, who was previously here at NYU, has done some further work extending this idea of modelling concepts, using Bayesian program induction, to compositional concepts in the form of "alien figures".
 
-[click] Similarly, Neil Bramley's work explores a model of how people use bottom-up hypotheses to induce rules in a Zendo inspired game.
+[click] Similarly, Neil Bramley's work explores a model of how people generate hypotheses using bottom-up feature-based processes to induce rules in a Zendo inspired game.
 
 Now, consider a similar kind of task
 -->
@@ -172,7 +173,9 @@ title: motivation-demo
 </v-click>
 
 <!--
-So you're given training examples in the following format. Here is a first training input.
+So you're given training examples in the following format. 
+
+Here is a first training input.
 
 [click] Followed by a training output. And the arrow here indicates that there is a hidden, underlying transformation between the input and output grid.
 
@@ -184,7 +187,7 @@ Can I get a clap of hands if you think you got the correct solution?
 
 [click] So here the rule is pretty obvious: extend the blue and red lines until the edge of the grid and color their intersection yellow.
 
-[click] Similarly to the previous tasks I briefly mentioned and others, learning the concept here is done in a few-shot setting
+[click] Similarly to the previous tasks I briefly mentioned and others in the literature, learning the concept here is done in a few-shot setting
 
 [click] The task involves inferring a kind of program
 
@@ -233,7 +236,7 @@ title: motivation-demo-2
 
 <div v-drag="[60,400,105,130]">
 <img src="/images/4364c1c4_train_input_3.png" style="width: auto; height: 95px;"/>
- <p class="text-ms text-gray-500" style="margin-top: 2px;">Train input 2</p>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train input 3</p>
 </div>
 
 <div v-drag="[180,430,40,70]">
@@ -242,7 +245,7 @@ title: motivation-demo-2
 
 <div v-drag="[250,400,105,130]">
 <img src="/images/4364c1c4_train_output_3.png" style="width: auto; height: 95px;"/>
- <p class="text-ms text-gray-500" style="margin-top: 2px;">Train input 2</p>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train input 3</p>
 </div>
 
 
@@ -281,15 +284,13 @@ title: motivation-demo-2
 
 <div v-drag="[502,419,341,65]">
 <v-click at="2">
-<p class="text-2xl text-center">
-
-An **unbounded** abstraction and reasoning domain!
+<p class="text-2xl text-center">A virtually <strong>unbounded</strong> abstraction and reasoning domain!
 </p>
 </v-click>
 </div>
 
 <!--
-So far, there is nothing really novel about what I've shown you. But consider this new task in the same domain. I'll give you a few moments to look at it.
+So far, there is nothing really novel about what I've shown you. But consider this other task in the same domain. I'll give you a few moments to look at it.
 
 Can I get a clap of hand if you think you figured it out?
 
@@ -297,9 +298,13 @@ Can I get a clap of hand if you think you figured it out?
 
 The task involves operations like finding objects, segmenting them by color and sliding them in a particular direction. 
 
-The rule here though is pretty different from the one we just saw, at least from a programming perspective.
+The program here though is pretty different from the one we just saw, at least from a programming perspective.
 
-[click] So this is what is really interesting about this novel task domain: unlike previous program induction tasks, it does not come with a pre-defined set of operators and primitives to search over for program composition. And this is very much like real-world tasks. It requires the ability to come up with abstractions on the fly.
+[click] So this is what is really interesting about this novel task domain: 
+
+Unlike many previous program induction tasks, it does not come with a pre-defined set of operators and primitives to search over for program composition. 
+
+And this is very much like real-world tasks which often require the ability to come up with abstractions on the fly.
 -->
 
 ---
@@ -348,21 +353,21 @@ Chollet, F. (2019). On the measure of intelligence.
 <!--
 So where do these tasks come from?
 
-To spur new research to endow machines with the kind of flexibility we just discussed, a unique and novel benchmark called the Abstraction and Reasoning Corpus (ARC) was developed in 2019 and released alongside a preprint by Francois Chollet.
+To spur new research to endow machines with the kind of flexibility we just discussed, a unique and novel benchmark called the Abstraction and Reasoning Corpus (ARC) was developed in 2019.
+
+Francois Chollet handcrafted each problem and released it alongside a preprint.
 
 [click] The benchmark was specifically designed to evaluate broad generalization which is the ability to solve a diverse set of novel tasks using little data
 
-[click] The benchmark consists of a set of visual program-synthesis tasks divided into a set of 400 training tasks and 400 evaluation tasks
+[click] The benchmark is divided into two sets: 400 training tasks and 400 evaluation tasks
 
-[click] Unique to this benchmark is that SOTA performance has not increased by much since its release with current best models at around 46%.
+[click] Unusually, SOTA performance on this benchmark has not increased by much since its release with current best models at around 46%.
 
 This is in stark contrast to many benchmarks in the machine learning world.
 
-[click] This led to the development of an ARC prize this year, with a million dollars in funds for rewarding progress towards human-level performance.
+[click] So this year, an ARC prize was founded, with a million dollars in funds for rewarding progress towards human-level performance.
 
-[click] Visually simple but challenging and conceptually rich benchmark
-
-Proves a great challenge for AI.
+[click] Although the tasks are visually simple, the benchmark is conceptually rich benchmark and particularly great challenge for AI.
 -->
 
 ---
@@ -372,6 +377,9 @@ title: main-question
 
 ## How do people `reason` in this novel domain and what can we learn from people to improve machine intelligence?
 
+<!--
+And so we ask the question:
+-->
 
 ---
 layout: two-cols-title
@@ -459,29 +467,34 @@ title: performance
 
 <v-clicks>
 
-- Training set: 76.2% 
+- [Training set: 76.2%]{style="color:#1f77b4"}
   - 74 tasks with 100\% success rate
-- Evaluation set:  64.2%
+- [Evaluation set:  64.2%]{style="color:#ff7f0e"}
   - 22 tasks with 100\% success rate
 - 98\% of tasks are solved by at least one person
+- [SOTA acccuracy: 46%]{style="color:#d62728"}
 </v-clicks>
 
 :: default ::
 
-<p style="font-size: 0.75em; color: grey">State-of-the-art approach: ~46%</p>
+<p style="font-size: 0.75em; color: #d62728">State-of-the-art approach: ~46%</p>
 
 <!--
 So, how good are people at this weird, artificial task? Surprisingly good!
 
 On the left plot here, the x-axis represents tasks ordered from hardest to easiest and the y-axis shows participant success rate.
 
-Dotted lines correspond to mean accuracy for people on each set and for the best algorithmic approach so far on the evaluation set.
+Blue and orange dotted lines correspond to mean accuracy for people on each set
+
+The red dotted line represent the accuracy of the best algorithmic approach so far on the evaluation set.
 
 [click] On the training set, we find a mean success rate of 76.2%. 74 tasks are solved by everyone that tried them in three attempts or less
 
 [click] On the evaluation set, we find a mean success rate of 64.2%. 22 tasks are solved by everyone that tried them in three attempts or less.
 
 [click] Importantly, 98% of tasks in both sets are solved by at least one person.
+
+[click] Meanwhile, machine accuracy sits at around 46%
 
 We find that the evaluation set is significantly harder than the training set but it's still unclear why that's the case.
 -->
@@ -512,14 +525,13 @@ go back to thinking about people's inferences as program-like
 <!--
 So people are pretty good at these tasks. But in what ways do they fail and can we learn anything from the kinds of errors that they make?
 
-Going back to this idea that I mentioned earlier that we can represent the concepts that people learn using programs, I'll propose there different kinds of program inference errors that people seem to be making here.
+Going back to this idea that I mentioned earlier of thinking about concept learning as program induction, I'll propose thee different kinds of program inference errors that people seem to be making in ARC tasks.
 -->
 
 ---
 layout: full
 title: fuzzy-errors-1
 ---
-
 
 # `Fuzzy` programs
 
@@ -559,16 +571,16 @@ title: fuzzy-errors-1
 
 <div v-drag="[60,400,105,130]">
 <img src="/images/a8610ef7_train_input_3.png" style="width: auto; height: 95px;"/>
- <p class="text-ms text-gray-500" style="margin-top: 2px;">Train input 2</p>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train input 3</p>
 </div>
 
 <div v-drag="[180,430,40,70]">
 <span class="text-5xl">→</span>
 </div>
 
-<div v-drag="[250,400,105,130]">
+<div v-drag="[250,400,110,130]">
 <img src="/images/a8610ef7_train_output_3.png" style="width: auto; height: 95px;"/>
- <p class="text-ms text-gray-500" style="margin-top: 2px;">Train input 2</p>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train output 3</p>
 </div>
 
 
@@ -596,7 +608,13 @@ Test
 </div>
 
 <!--
+The first kind of error I want to talk about, I call it fuzzy program inference.
 
+So the problem here is actually pretty hard and none of the people we tested figured it out.
+
+If you don't see it, the rule involves coloring red the input cells that are symmetric along a horizontal midline and coloring all the others gray.
+
+Maybe add line here?
 -->
 
 ---
@@ -613,7 +631,7 @@ title: fuzzy-errors-1
 :: left ::
 
 <img src="/images/a8610ef7_test_output_1.png" style="width: 250px"/>
-<p class="text-ms text-gray-500" style="margin-top: 4px;">Test output</p>
+<p class="text-ms text-gray-500" style="margin-top: 4px;">Correct output</p>
 
 :: right ::
 
@@ -634,7 +652,11 @@ title: fuzzy-errors-1
   </div>
 </div>
 
+<!--
+Although people don't get the correct answer, they get pretty close in many ways. 
 
+Let's dig a little into that.
+-->
 
 ---
 layout: two-cols-title
@@ -682,9 +704,11 @@ function solve(input_grid){
 }
 ```
 
-<!-- 
+<!--
+So on the left here I'll show successive states of an ARC grid.
 
- -->
+On the right, we'll go through an example of the kind of program one might be inferring as they reason through this problem.
+-->
 
 ---
 layout: two-cols-title
@@ -732,10 +756,9 @@ function solve(input_grid){
 }
 ```
 
-<!-- 
-
- -->
-
+<!--
+All outputs were 6x6 grids.
+-->
 
 ---
 layout: two-cols-title
@@ -783,9 +806,9 @@ function solve(input_grid){
 }
 ```
 
-<!-- 
-
- -->
+<!--
+Every output seemed to be a recolored copy of the input grid. So let's copy the input grid here.
+-->
 
 ---
 layout: two-cols-title
@@ -833,10 +856,11 @@ function solve(input_grid){
 }
 ```
 
-<!-- 
+<!--
+Instead of blue many cells seemed to be gray. 
 
- -->
-
+Let's just color all of them grey for now.
+-->
 
 ---
 layout: two-cols-title
@@ -885,11 +909,7 @@ function solve(input_grid){
 ```
 
 <!--
-Inferred program is almost correct but a few steps are ==fuzzy==. 
-
-What do I mean by fuzzy?
-- Surface level statistics
-- Approximate operations
+Hmm so I'm not be sure about the exact coloring of red but let's just fill in randomly selected cells and their neighbours.
 -->
 
 ---
@@ -937,9 +957,13 @@ function solve(input_grid){
 }
 ```
 
+<!--
+So this is what I mean by fuzzy program: the inference here is almost correct but a few steps are fuzzy.
 
-<!-- 
+These fuzzy steps are correct on a surface level but they rely on:
 
+- surface level statistics
+- and approximate operations
 -->
 
 ---
@@ -1027,9 +1051,11 @@ Test
   </v-click>
 
 <!--
-A common generalization error for this problem: 
+Now let's talk about a second kind of error: generalization errors
 
-"the lowest shape / object in the grid".
+So here the rule is to pick the object that is non-symmetric.
+
+[click] But many participants that tried this problem instead picked the object that is lowest in the grid. This happens to apply to 2/3 training examples.
 -->
 
 ---
@@ -1201,13 +1227,12 @@ Notice that there is a light blue shape surrounded by red in the top left square
 
 The light blue squares in the rectangle on the right indicate where to paste the blue shape. 
 
-The bottom rectangle indicates where to paste the shape.
+--Point with mouse--
 
-Finally, the modified bottom rectangle should be submitted as the output grid.
+The bottom rectangle indicates the output grid where to paste the shape.
 
 [click] A few participants on this problem actually omitted that last step.
 -->
-
 
 ---
 layout: full
@@ -1273,9 +1298,10 @@ Inferred program is correct up to the $k^{th}$ step but missing $N-k$ steps
 </div>
 </v-clicks>
 
-
 <!--
-[click] The inferred program is correct but is somehow cut off. Some hypothesized reasons why that might be:
+[click] So in this case, the inferred program is correct up to some kth step but is somehow cut off. 
+
+Some hypothesized reasons why that might be:
 
 [click] The participant may not know what the next steps are
 
@@ -1360,9 +1386,13 @@ A[Concept] <---> B[Program]
 </v-clicks>
 
 <!--
+Now moving on to natural language quickly.
+
 We won't have time to go into the details of this pretty difficult problem but I'll use it to illustrate a very neat property about ARC problems and human cognition. 
 
 [click] When you first saw it, the concept of something being "wavy" might have occurred to you. 
+
+Above here is an incorrect description by one of our participants.
 
 [click] And people use these kinds of words to describe their solutions in many problems.
 
@@ -1386,6 +1416,13 @@ title: future-directions
 
 # `Future` directions
 
+<div style="display: flex; justify-content: center; align-items: flex-end; height: 100%;">
+  <div style="width: 100px; height: 100px; margin-top: 75px;">
+    <QRCode value="arc-visualizations.github.io" :size="100" render-as="svg"/>
+  <p class="text-xs text-center">Check out our project webpage</p>
+  </div>
+</div>
+
 :: content ::
 
 <div class="flex justify-center">
@@ -1396,12 +1433,20 @@ title: future-directions
 - What makes some ARC problems more ==difficult==?
 - How can we use ==natural language== descriptions to make predictions about difficulty and the kinds of programs people infer?
 - The majority of approaches to ARC have unsuccessfully tried to design a DSL to solve ARC tasks. What are ==alternatives== to this?
-- Inventor of the benchmark is going to be here in October, more details on the Minds, Brains & Machines website!
+- Inventor of the benchmark is going to be here in October, more details on the <img src="https://mbm.cds.nyu.edu/assets/images/brain.svg" style="width: 15px; height: auto; display: inline-block; vertical-align: middle;"> Minds, Brains & Machines website 
 
 <!--
-We're looking into the variety of words and concepts that people use to describe their solutions in ARC tasks and how it might relate to things like difficulty.
+So we're currently exploring many different avenues to understand how people reason in this novel domain.
 
-when people generate these grids, can we infer something about their mental representation by looking at how they generate the output?
+In particular, it's not clear what makes some ARC problems harder for people than others. To start getting a clearer idea of this, we've been looking into Bayesian Item Response Theory methods to infer parameters that disambiguate latent participant ability and problem difficulty.
+
+We're also looking into the variety of words and concepts that people use to describe their solutions in ARC tasks and how this might relate to things like difficulty.
+
+Up here, I'm showing the state space graph of a problem. Each node represents a state and edges transitions between them. We're also interested in looking into how people construct the grids and what that tells out about how they decompose their goals into subgoals.
+
+A more difficult question is about what kind of computational model can both capture human behavior and accuracy in ARC tasks. The vast majority of approaches so far have used what is called a DSL, a special kind of programming language designed for a particular task. Those approaches are brittle and don't work very well. 
+
+Finally, Francois Chollet is going to be visiting in October so check out the NYU Minds, Brains and Machine website if you're interested in attending.
 -->
 
 ---
