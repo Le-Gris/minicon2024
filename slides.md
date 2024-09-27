@@ -1283,83 +1283,139 @@ Inferred program is correct up to the $k^{th}$ step but missing $N-k$ steps
 -->
 
 ---
-layout: two-cols-title
-columns: is-8
-align: l-lm-lm
+layout: full
+title: natural-language
 ---
 
-::title::
+# From `natural language` to programs
 
-# `Natural language`: what does it tell us?
+<div class="items-center" v-drag="[60,80,233,40]">
+<span class="text-2xl">Training examples</span>
+</div>
+
+<div v-drag="[180,160,40,70]">
+<span class="text-5xl">→</span>
+</div>
+
+<div v-drag="[60,120,105,130]">
+<img src="/images/1c56ad9f_train_input_1.png" style="width: auto; height: 95px;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train input 1</p>
+</div>
+
+<div v-drag="[250,120,120,130]">
+<img src="/images/1c56ad9f_train_output_1.png" style="width: auto; height: 95px;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train output 1</p>
+</div>
 
 
-::left::
+<div v-drag="[60,260,105,130]">
+<img src="/images/1c56ad9f_train_input_2.png" style="width: auto; height: 95px;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train input 2</p>
+</div>
+
+<div v-drag="[180,290,40,70]">
+<span class="text-5xl">→</span>
+</div>
+
+<div v-drag="[250,260,120,130]">
+<img src="/images/1c56ad9f_train_output_2.png" style="width: auto; height: 95px;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train output 2</p>
+</div>
+
+<div v-drag="[60,400,105,130]">
+<img src="/images/1c56ad9f_train_input_3.png" style="width: auto; height: 95px;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train input 2</p>
+</div>
+
+<div v-drag="[180,430,40,70]">
+<span class="text-5xl">→</span>
+</div>
+
+<div v-drag="[250,400,105,130]">
+<img src="/images/1c56ad9f_train_output_3.png" style="width: auto; height: 95px;"/>
+ <p class="text-ms text-gray-500" style="margin-top: 2px;">Train input 2</p>
+</div>
+
+<v-clicks depth="2">
+<div v-drag="[459,85,489,114]">
+<Box shape="s-d-2-50" size="-" color="neutral-light" style="margin-top:50px">Keep the top and bottom lines the same and the line just below them one over. Repeat a <span class="text-pink-500">wavy</span> pattern for the rest of the shape.</Box>
+</div>
+
+<div v-drag="[447,246,496,173]">
 
 People use all sorts of abstractions and concepts
+- Geometry / shape: *wavy*, *vertical*, *symmetrical*, *diagonal*, etc
+- Intuitive physics: *contains*, *liquid*, *gravity*, *fills*, *magnetic*, etc
+- Others: *layer*, *outline*, *move*, *slide*, *flower*, *tetris*, etc 
+</div>
 
-<v-clicks>
+<div v-drag="[543,441,268,59]">
 
-- Geometry / shape: "wavy", "vertical", "symmetrical", "diagonal", etc
-- Intuitive physics: "contains", "liquid", "gravity", "fills", "magnetic", etc
-- And more: "layer", "outline", "move", "slide", "flower", "tetris", etc 
+```mermaid
+graph LR
+A[Concept] <---> B[Program]
+```
+</div>
+
 </v-clicks>
 
-::right::
-
-
 <!--
-The most striking thing in people's descriptions is the variety of concepts and abstractions that they use to solve ARC tasks
+We won't have time to go into the details of this pretty difficult problem but I'll use it to illustrate a very neat property about ARC problems and human cognition. 
 
-[click] We find words like "wavy" or "vertical", "symmetrical" indicating the use of abstractions based on geometry
+[click] When you first saw it, the concept of something being "wavy" might have occurred to you. 
 
-[click] We also find words that are reminiscent of intuitive physics: "contains", "liquid", "gravity", "fills", "magnetic"
+[click] And people use these kinds of words to describe their solutions in many problems.
 
-[click] "layer", "outline", "move", "slide", "flower", "tetris"
+[click] We see concepts from geometry
 
-The richness of the descriptions that people use shows the breadth of abstractions and concepts that people bring to bear when solving ARC tasks.
+[click] Concepts from intuitive physics
 
-- visual examples
-- be more clear about the point: people bring to bear knowledge about the world that is intuitively analogous to problems in ARC but sometimes difficult to operationalize.
+[click]  And many other concepts
+
+[click]  What's remarkable here is that people can intuitively come up with these abstractions even though formalizing them into actual subroutines or programs can be difficult.
 -->
 
 ---
-layout: two-cols-title
-columns: is-4
-align: l-cm-cm
+layout: side-title
+color: sky-light
+align: lm-lm
+title: future-directions
 ---
 
 :: title ::
 
-# Demo: `task 3`
+# `Future` directions
 
-:: left ::
+:: content ::
 
-<img src="/images/1c56ad9f-train.png" alt="Alt text" style="width: 170px; height: auto;">
+<div class="flex justify-center">
+  <img src="/images/f76d97a5_state_space_graph.png" style="width: auto; height: 175px;">
+</div>
+<p class="text-lg text-center text-gray-500">State space graph</p>
 
-:: right ::
-
-<v-switch>
-<template #1>
-  <img src="/images/1c56ad9f-test-hidden.png" alt="Alt text" style="width: 200px; height: auto;">
-</template>
-
-<template #2>
-  <img src="/images/1c56ad9f-test.png" alt="Alt text" style="width: 200px; height: auto;">
-  <Box shape="s-d-2-50" size="-" color="neutral-light" style="margin-top:50px">Fill in the gray squares with the color of the other squares and fill the rest of the squares with black.</Box>
-</template>
-</v-switch>
+- What makes some ARC problems more ==difficult==?
+- How can we use ==natural language== descriptions to make predictions about difficulty and the kinds of programs people infer?
+- The majority of approaches to ARC have unsuccessfully tried to design a DSL to solve ARC tasks. What are ==alternatives== to this?
+- Inventor of the benchmark is going to be here in October, more details on the Minds, Brains & Machines website!
 
 <!--
-[click] Here are some training examples and test input for a much more difficult task. I'll give you a moment to figure it out.
+We're looking into the variety of words and concepts that people use to describe their solutions in ARC tasks and how it might relate to things like difficulty.
 
-[click] Here is the correct test output and again a randomly selected (correct) natural language solution description. Most participants that tried this didn't get it.
-
-- good sense of abstraction here but very hard to formalize -- different programs but mapping to same concept
+when people generate these grids, can we infer something about their mental representation by looking at how they generate the output?
 -->
+
+---
+layout: section
+color: amber-light
+title: thanks
+---
+
+# Thanks for listening!
 
 ---
 layout: two-cols-title
 align: l-lm-cm
+title: difficulty
 ---
 
 :: title ::
@@ -1372,65 +1428,19 @@ People are pretty good at identifying arbitrary objects and understanding visual
 
 People are pretty bad at operations that are mentally taxing: logical operations, cell-by-cell operations or mental rotations.
 
----
-layout: default
----
-
-# `Human-machine` comparisons
-
-OK. But what about the machines? <material-symbols-android />
-
-Most approaches use a DSL-like approach. Interesting that the intuition operations are very program-like but this fails.
-
-People seem to be good at this because they can use arbitrary abstractions to guide the program search.
-
----
-layout: default
----
-
-# Bottleneck states / subgoals / `decomposition`
-
-when people generate these grids, can we infer something about their mental representation by looking at how they generate the output?
-
-<img src="/images/f76d97a5_state_space_graph.png" style="width: 200px; height: auto;">
-
----
-layout: default
----
-
-# Some `future` directions stuff
-
-- Potential models
-- Inventor of the benchmark is going to be here in October!
-
-<!-- Speaking of markdown, you can use markdown to make things **bold** or
-_italic_ or even `code` like `this`. In **Neversink** you can also
-==highlight things using the double equals signs like this== thanks
-to the `markdown-it-mark` plugin.
-
-Of course you can make bullet lists:
-
-- Hi
-- There
-- Bananas
-
-and use all the Slidev [markdown features](https://sli.dev/guide/syntax) like LaTeX math $x^2$, etc... -->
-
 <!--
-future directions 
+And speaking of difficulty, we've also started investigating what might make some ARC problems harder than others.
+
+We've also looked at bayesian item response theory to try and get a better estimate of problem difficulty.
+
+If you're interested in some preliminary quantitative analyses, take a look at our preprint!
 -->
-
----
-layout: section
-color: amber-light
----
-
-# Thanks for listening!
 
 ---
 layout: two-cols-title
 columns: is-5
 align: l-cm-cm
+title: alternative-programs
 ---
 
 :: title ::
@@ -1453,49 +1463,8 @@ A perfectly consistent output!
 -->
 
 ---
-layout: side-title
-side: l
-color: amber-light
-titlewidth: is-4
-align: rm-lm
----
-
-:: title ::
-
-# Generalization via abstraction
-
-:: content ::
-
-- Human intelligence is characterized by the ability to generalize using ==flexible abstractions==
-<v-clicks>
-
-- The rules people learn are algorithmically rich but can be acquired with minimal data and computation
-  - Often, this can look a whole lot like learning program-like representations
-- Large language models are still lacking in their ability to learn and reason about the world in this way
-- This has motivated researchers to develop novel paradigms to push forward 
-</v-clicks>
-
-<!--
-So this kind of program-like generative ability is an important cognitive ability.
-
-And human intelligence is in part characterized by this ability to generalize using flexible abstractions of this kind. 
-
-[click] The rules that people learn and infer are algorithmically rich but acquired with minimal data and computation
- 
-This can look a lot like learning program-like representations
-
-[click] Conversely, popular AI models like LLMs are still lacking in their ability to generalize flexibly in this way
-
-
-
--- be less strong claim-y about previous examples 
--- LLMs operate essentially in the opposite paradigm -> could be done without.
--- there is a million dollar prize for solving this!
--- in two weeks, the inventor of the prize.
--->
-
----
 layout: default
+title: learning-piano-1
 ---
 
 # Let's learn the piano!
@@ -1521,6 +1490,7 @@ The 12 notes shown here underlie basically all of Western music.
 ---
 layout: two-cols-title
 columns: is-8
+title: learning-piano-2
 ---
 
 :: right ::
@@ -1592,6 +1562,7 @@ So the piano student may be learning a simple routine that could be represented 
 layout: two-cols-title
 columns: is-4
 align: l-cm-lt
+title: learning-piano-3
 ---
 
 :: left ::
@@ -1662,6 +1633,7 @@ To give a satisfying answer to this question, the student will have to reason ab
 layout: two-cols-title
 columns: is-4
 align: l-cm-lm
+title: learning-piano-4
 ---
 
 :: left ::
@@ -1728,7 +1700,8 @@ Indeed what the student is searching for is a more general program which can be 
 ---
 layout: two-cols-title
 columns: is-4
-align: l-cm-lm
+align: l-cm-lt
+title: learning-piano-5
 ---
 
 :: left ::
@@ -1811,6 +1784,7 @@ So our student spends some time thinking
 
 ---
 layout: default
+title: little-data
 ---
 
 # People generalize from `little data`
@@ -1845,6 +1819,214 @@ Maybe add a few citations about concept learning and little data regimes.
 ---
 layout: two-cols-title
 align: l-cm-lm
+columns: is-8
+title: dataset
+---
+
+:: title ::
+
+# `Data` collection
+
+:: left ::
+
+<img src="/images/arc-preprint-figure2.png" alt="Alt text" style="width: 450px; height: auto;">
+
+
+:: right ::
+
+Rich behavioral dataset:
+
+<v-clicks>
+
+- All visited grid states 
+- Action traces for each attempt across all 800 tasks
+- Natural language descriptions of each participant's solution
+</v-clicks>
+
+<!--
+This resulted in a dataset containing rich behavioral traces of the grid generation process for each task. 
+
+[click] It includes all visited grid states
+
+[click] All action traces for each participant across all attempts on the 800 tasks
+
+[click] And natural language hypotheses about the underlying transformation for each task.
+
+Here to the left you can see examples of states visited by participants from start to end and their solution description.
+
+-- may or may not need it, no bullets
+-- too small
+-->
+
+---
+layout: two-cols-title
+columns: is-4
+align: l-cm-cm
+title: demo1
+---
+
+:: title ::
+
+# demo `task 1`
+
+:: left ::
+
+<v-click>
+
+<img src="/images/f76d97a5-train.png" alt="Alt text" style="width: 200px; height: auto;">
+</v-click>
+
+:: right ::
+
+<v-switch>
+<template #1>
+  <img src="/images/f76d97a5-test-hidden.jpg" alt="Alt text" style="width: 200px; height: auto;">
+</template>
+
+<template #2>
+<img src="/images/f76d97a5-test.png" alt="Alt text" style="width: 200px; height: auto;">
+<Box shape="s-d-2-50" size="-" color="neutral-light" style="margin-top:50px">Fill in the gray squares with the color of the other squares and fill the rest of the squares with black.</Box>
+</template>
+</v-switch>
+
+<!--
+[click] Here are some training examples and corresponding [click]  test input for an easy task. I'll give you a few seconds to figure out the rule. Everyone got it?
+
+[click]  Nearly everyone gets this task pretty easily. Here is the correct test output and a randomly selected (correct) natural language solution description.
+
+- pick easier example that is obvious
+- talk about different aspects of each task in the demos
+- **little data, program synthesis but human generated problems, DSL open (no predefined set of primitives and proves to be very difficult to tackle in this way -- tell you more later), natural language shows that people bring a lot of knowledge to bear when doing these tasks** 
+- present examples ones by one
+- if you think you know the rule, clap!
+- if you're curious about these, go to website
+-->
+
+---
+layout: two-cols-title
+columns: is-4
+align: l-cm-cm
+title: demo2
+---
+
+:: title ::
+
+# Demo: `task 2`
+
+:: left ::
+
+<img src="/images/e9ac8c9e-train.png" alt="Alt text" style="width: 200px; height: auto;">
+
+:: right ::
+
+<img src="/images/e9ac8c9e-test.png" alt="Alt text" style="width: 200px; height: auto;">
+
+
+<Box shape="s-d-2-50" size="-" color="neutral-light" style="margin-top:50px">
+
+Colored outside blocks at the corner should color the inside gray boxes the same, while sharing the same number of blocks.
+</Box>
+
+<!--
+Here's another demo task and a randomly sampled solution description from our dataset.
+-->
+
+---
+layout: two-cols-title
+columns: is-4
+align: l-cm-cm
+title: demo3
+---
+
+:: title ::
+
+# Demo: `task 3`
+
+:: left ::
+
+<img src="/images/1c56ad9f-train.png" alt="Alt text" style="width: 170px; height: auto;">
+
+:: right ::
+
+<v-switch>
+<template #1>
+  <img src="/images/1c56ad9f-test-hidden.png" alt="Alt text" style="width: 200px; height: auto;">
+</template>
+
+<template #2>
+  <img src="/images/1c56ad9f-test.png" alt="Alt text" style="width: 200px; height: auto;">
+  <Box shape="s-d-2-50" size="-" color="neutral-light" style="margin-top:50px">Keep the top and bottom lines the same. the line just below it one over. Repeat a wavey pattern for the rest of the shape.</Box>
+</template>
+</v-switch>
+
+<!--
+[click] Here are some training examples and test input for a much more difficult task. I'll give you a moment to figure it out.
+
+[click] Here is the correct test output and again a randomly selected (correct) natural language solution description. Most participants that tried this didn't get it.
+
+- good sense of abstraction here but very hard to formalize -- different programs but mapping to same concept
+-->
+
+---
+layout: default
+title: human-machine
+---
+
+# `Human-machine` comparisons
+
+OK. But what about the machines? <material-symbols-android />
+
+Most approaches use a DSL-like approach. Interesting that the intuition operations are very program-like but this fails.
+
+People seem to be good at this because they can use arbitrary abstractions to guide the program search.
+
+---
+layout: side-title
+side: l
+color: amber-light
+titlewidth: is-4
+align: rm-lm
+title: abstraction-generalization
+---
+
+:: title ::
+
+# Generalization via abstraction
+
+:: content ::
+
+- Human intelligence is characterized by the ability to generalize using ==flexible abstractions==
+<v-clicks>
+
+- The rules people learn are algorithmically rich but can be acquired with minimal data and computation
+  - Often, this can look a whole lot like learning program-like representations
+- Large language models are still lacking in their ability to learn and reason about the world in this way
+- This has motivated researchers to develop novel paradigms to push forward 
+</v-clicks>
+
+<!--
+So this kind of program-like generative ability is an important cognitive ability.
+
+And human intelligence is in part characterized by this ability to generalize using flexible abstractions of this kind. 
+
+[click] The rules that people learn and infer are algorithmically rich but acquired with minimal data and computation
+ 
+This can look a lot like learning program-like representations
+
+[click] Conversely, popular AI models like LLMs are still lacking in their ability to generalize flexibly in this way
+
+
+
+-- be less strong claim-y about previous examples 
+-- LLMs operate essentially in the opposite paradigm -> could be done without.
+-- there is a million dollar prize for solving this!
+-- in two weeks, the inventor of the prize.
+-->
+
+---
+layout: two-cols-title
+align: l-cm-lm
+title: piano-program
 ---
 
 :: title ::
@@ -1890,117 +2072,4 @@ And people have studied this kind of flexible and generative type of concept lea
 -- background knowledge (murphy's work)
 -- unbounded (DSL-open)
 -- few-shot learning
--->
-
----
-layout: two-cols-title
-align: l-cm-lm
-columns: is-8
----
-
-:: title ::
-
-# `Data` collection
-
-:: left ::
-
-<img src="/images/arc-preprint-figure2.png" alt="Alt text" style="width: 450px; height: auto;">
-
-
-:: right ::
-
-Rich behavioral dataset:
-
-<v-clicks>
-
-- All visited grid states 
-- Action traces for each attempt across all 800 tasks
-- Natural language descriptions of each participant's solution
-</v-clicks>
-
-<!--
-This resulted in a dataset containing rich behavioral traces of the grid generation process for each task. 
-
-[click] It includes all visited grid states
-
-[click] All action traces for each participant across all attempts on the 800 tasks
-
-[click] And natural language hypotheses about the underlying transformation for each task.
-
-Here to the left you can see examples of states visited by participants from start to end and their solution description.
-
--- may or may not need it, no bullets
--- too small
--->
-
----
-layout: two-cols-title
-columns: is-4
-align: l-cm-cm
-title: new work
----
-
-:: title ::
-
-# Previous work
-
-:: left ::
-
-<v-click>
-
-<img src="/images/f76d97a5-train.png" alt="Alt text" style="width: 200px; height: auto;">
-</v-click>
-
-:: right ::
-
-<v-switch>
-<template #1>
-  <img src="/images/f76d97a5-test-hidden.jpg" alt="Alt text" style="width: 200px; height: auto;">
-</template>
-
-<template #2>
-<img src="/images/f76d97a5-test.png" alt="Alt text" style="width: 200px; height: auto;">
-<Box shape="s-d-2-50" size="-" color="neutral-light" style="margin-top:50px">Fill in the gray squares with the color of the other squares and fill the rest of the squares with black.</Box>
-</template>
-</v-switch>
-
-<!--
-[click] Here are some training examples and corresponding [click]  test input for an easy task. I'll give you a few seconds to figure out the rule. Everyone got it?
-
-[click]  Nearly everyone gets this task pretty easily. Here is the correct test output and a randomly selected (correct) natural language solution description.
-
-- pick easier example that is obvious
-- talk about different aspects of each task in the demos
-- **little data, program synthesis but human generated problems, DSL open (no predefined set of primitives and proves to be very difficult to tackle in this way -- tell you more later), natural language shows that people bring a lot of knowledge to bear when doing these tasks** 
-- present examples ones by one
-- if you think you know the rule, clap!
-- if you're curious about these, go to website
--->
-
----
-layout: two-cols-title
-columns: is-4
-align: l-cm-cm
----
-
-:: title ::
-
-# Demo: `task 2`
-
-:: left ::
-
-<img src="/images/e9ac8c9e-train.png" alt="Alt text" style="width: 200px; height: auto;">
-
-:: right ::
-
-<img src="/images/e9ac8c9e-test.png" alt="Alt text" style="width: 200px; height: auto;">
-
-
-<Box shape="s-d-2-50" size="-" color="neutral-light" style="margin-top:50px">
-
-Colored outside blocks at the corner should color the inside gray boxes the same, while sharing the same number of blocks.
-</Box>
-
-<!--
-Here's another demo task and a randomly sampled solution description from our dataset.
 -->
