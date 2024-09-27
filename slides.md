@@ -1201,17 +1201,15 @@ Test
 <!--
 Sometimes the programs that people infer are incomplete.
 
-Here the transformation is indicated by a visual instruction in the top right rectangle.
-
 Notice that there is a light blue shape surrounded by red in the top left square.
 
-The light blue squares in the rectangle on the right indicate where to paste the blue shape. 
+This light blue shape must be pasted in the bottom rectangle
+
+The light blue squares in the rectangle on the top right indicate where to paste the blue shape. 
 
 --Point with mouse--
 
-The bottom rectangle indicates the output grid where to paste the shape.
-
-[click] A few participants on this problem actually omitted that last step.
+[click] But a few participants on this problem actually omitted that last step.
 -->
 
 ---
@@ -1386,7 +1384,7 @@ Above here is an incorrect description by one of our participants.
 
 [click]  And many other concepts
 
-[click]  What's remarkable here is that people can intuitively come up with these abstractions even though [click] formalizing them into actual subroutines or programs can be difficult.
+[click]  What's remarkable here is that people can intuitively come up with these approximately correct abstractions even though [click] formalizing them into actual subroutines or programs can be difficult.
 -->
 
 ---
@@ -1435,9 +1433,9 @@ title: future-directions
 <!--
 So we're currently exploring many different avenues to understand how people reason in this novel domain.
 
-[click] In particular, it's not clear what makes some ARC problems harder for people than others. To start getting a clearer idea of this, we've been looking into Bayesian Item Response Theory methods to infer parameters that disambiguate latent participant ability and problem difficulty.
+[click] In particular, it's not clear what makes some ARC problems harder for people than others. To start getting a clearer idea of this, we've been looking into Bayesian Item Response Theory methods ... to infer parameters that disambiguate latent participant ability and problem difficulty.
 
-[click] We're also looking into the variety of words and concepts that people use to describe their solutions in ARC tasks and how this might relate to things like difficulty.
+[click] We're also looking into the variety of words and concepts that people use to describe their solutions in ARC tasks and applying NLP methods to see how this might relate to things like difficulty.
 
 [click] Up here, I'm showing the state space graph of a problem in the training set. Each node represents a state and edges transitions between them. You can see this trajectory that many participants seem to have visited to get to the correct state (green node).
 
@@ -1455,6 +1453,13 @@ title: thanks
 ---
 
 # Thanks for listening! <material-symbols-android/>
+
+<div style="display: flex; justify-content: center; align-items: flex-end; height: 100%;">
+  <div class="text-center" style="width: 75px; height: 75px; margin-top: 100px;">
+    <QRCode value="arc-visualizations.github.io" :size="75" render-as="svg"/>
+  <p class="text-xs text-center">Project webpage</p>
+  </div>
+</div>
 
 ---
 layout: two-cols-title
