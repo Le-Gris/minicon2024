@@ -337,7 +337,7 @@ title: human-machine-evaluation
 - 400 training tasks, 400 evaluation tasks
 - 5 years later, state-of-the-art performance is still low (~46\%)
   - LLMs are not any better even when given lots of compute time!
-- Currently a ==million dollar prize== for achieving human-level accuracy!
+- ARC prize: currently a ==million dollar prize== for achieving human-level accuracy!
 </v-clicks>
 
 <div v-click="5">
@@ -351,8 +351,6 @@ Chollet, F. (2019). On the measure of intelligence.
 </div>
 
 <!--
-So where do these tasks come from?
-
 To spur new research to endow machines with the kind of flexibility we just discussed, a unique and novel benchmark called the Abstraction and Reasoning Corpus (ARC) was developed in 2019.
 
 Francois Chollet handcrafted each problem and released it alongside a preprint.
@@ -367,7 +365,7 @@ This is in stark contrast to many benchmarks in the machine learning world.
 
 [click] So this year, an ARC prize was founded, with a million dollars in funds for rewarding progress towards human-level performance.
 
-[click] Although the tasks are visually simple, the benchmark is conceptually rich benchmark and particularly great challenge for AI.
+[click] Although the tasks are visually simple, the benchmark is conceptually rich and a particularly great challenge for AI.
 -->
 
 ---
@@ -402,15 +400,13 @@ columns: is-8
 
 <v-clicks>
 
-- 5 random tasks
+- 5 random tasks each (N=1729)
 - **Goal**: generate the correct output grid
 - Describe solution in words
 </v-clicks>
 
 <!--
-[click] We got over 1700 online workers to do 5 random tasks using the browser interface shown here.
-
-The tasks were sampled from either the training set or the evaluation set
+[click] We got over 1700 online workers to do 5 randomly selected tasks using the browser interface shown here.
 
 [click] The main instruction to participants was to infer the underlying transformation by _generating_ the correct output grid given a test input.
 
